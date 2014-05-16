@@ -90,12 +90,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\uniTunes\uniTunes.csproj">
-      <Project>{8F5F37C4-57AB-4F40-89A4-D63116AF8F1B}</Project>
-      <Name>uniTunes</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

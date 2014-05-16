@@ -9,9 +9,6 @@ C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\b
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.WebPages.dll
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\uniTunes.dll
-C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.Optimization.dll
-C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\uniTunes.pdb
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.Helpers.xml
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.Mvc.xml
@@ -19,7 +16,6 @@ C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\b
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.WebPages.xml
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\bin\Debug\System.Web.Optimization.xml
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\obj\Debug\uniTunes.Tests.csprojResolveAssemblyReference.cache
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\obj\Debug\uniTunes.Tests.dll
 C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Tests\obj\Debug\uniTunes.Tests.pdb
