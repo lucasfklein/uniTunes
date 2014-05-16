@@ -1,0 +1,5 @@
+C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Common\bin\Debug\uniTunes.Common.dll
+C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Common\bin\Debug\uniTunes.Common.pdb
+C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Common\obj\Debug\uniTunes.Common.csprojResolveAssemblyReference.cache
+C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Common\obj\Debug\uniTunes.Common.dll
+C:\Users\felipe.machado\Documents\GitHub\Arq_Sfw_GrauB\uniTunes\uniTunes.Common\obj\Debug\uniTunes.Common.pdb
