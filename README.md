@@ -1,8 +1,3 @@
-Arq_Sfw_GrauB
-=============
-
-Trabalho de Arquitetura de Software - Unisinos
-
 uniTunes
 ========================
 
