@@ -13,14 +13,14 @@ uniTunes
 
 	Front-end: HTML5, CSS3, Javascript
 	Javascript libraries: jQuery
-	Design Patterns: -/-
-	Others: -/-	
+	Design Patterns: Entity Framework, Unit of Work, Repositories
+	Others: Amazon RDS (SQL Server)
 ========================
 	Solution:
 	- uniTunes.Common
 		- Extensions, Helpers
 	- uniTunes.Data
-	  - Data access Layer
+	  	- Data access Layer
 		- Configuration, Initializers and Infrastructure.
 		- Generic repository and individuals repositories.
 	- uniTunes.Models
