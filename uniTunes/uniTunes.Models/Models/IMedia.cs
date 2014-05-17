@@ -9,11 +9,12 @@ namespace uniTunes.Models
 {
     public abstract class IMedia
     {
-        public string Name;
-        public string Description;
-        public double Price;
-        public Academic Author;
-        public DateTime CreatedOn;
+        public int MediaId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public double Price { get; set; }
+        public Academic Author { get; set; }
+        public DateTime CreatedOn { get; set; }
 
         public bool IsFree
         { 

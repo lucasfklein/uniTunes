@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace uniTunes.Models.Models
 {
     public class Balance
     {
+        [Key]
+        public int BalanceId;
         public double Value;
-        public IEnumerable<Credit> Historic;
+        public ICollection<Credit> Historic;
     }
 }
