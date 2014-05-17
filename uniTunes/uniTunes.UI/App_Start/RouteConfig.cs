@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace uniTunes
+namespace uniTunes.UI
 {
     public class RouteConfig
     {

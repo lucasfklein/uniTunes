@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace uniTunes
+namespace uniTunes.UI
 {
     public class BundleConfig
     {

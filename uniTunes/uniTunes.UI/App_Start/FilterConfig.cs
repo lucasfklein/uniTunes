@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace uniTunes
+namespace uniTunes.UI
 {
     public class FilterConfig
     {
