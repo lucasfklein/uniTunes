@@ -39,10 +39,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -118,6 +125,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\UserContext.cs" />
+    <Compile Include="Controllers\AcademicController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MediaController.cs" />
@@ -152,6 +160,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Academic\Create.cshtml" />
+    <Content Include="Views\Academic\Delete.cshtml" />
+    <Content Include="Views\Academic\Details.cshtml" />
+    <Content Include="Views\Academic\Edit.cshtml" />
+    <Content Include="Views\Academic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -160,6 +173,10 @@
     <ProjectReference Include="..\uniTunes.Common\Common.csproj">
       <Project>{082a93b7-778b-4a38-bc76-a7eebe000728}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\uniTunes.Data\Data.csproj">
+      <Project>{3afd7125-64f4-431b-ba52-f8cc63df0908}</Project>
+      <Name>Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\uniTunes.Models\Models.csproj">
       <Project>{79a6aff1-9161-4e84-b9fc-8eb713d2fc28}</Project>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using uniMedia.UI.ActionFilters;
-using uniTunes.Models.Models;
+using uniTunes.Models;
 using uniTunes.Services;
 
 namespace uniTunes.UI.Controllers

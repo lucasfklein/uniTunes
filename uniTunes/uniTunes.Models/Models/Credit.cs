@@ -8,7 +8,7 @@ namespace uniTunes.Models
 {
     public class Credit
     {
-        public int Id { get; set; }
+        public int CreditId { get; set; }
         public double Value { get; set; }
         public CreditStatus Status { get; set; }
         public CreditType Type { get; set; }
