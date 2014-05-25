@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace uniTunes.Models
 {
-    public class Credit
+    public partial class Credit
     {
         public int CreditId { get; set; }
         public double Value { get; set; }

@@ -9,8 +9,7 @@ namespace uniTunes.Models
 {
     public abstract class IMedia
     {
-        [Key]
-        public int MediaId { get; set; }
+
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
@@ -24,6 +23,12 @@ namespace uniTunes.Models
                 return (Price <= 0); 
             } 
         }
+    }
+
+    public partial class Media
+    {
+        [Key]
+        public int MediaId { get; set; }
     }
 
     public class Music : IMedia

@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace uniTunes.Models
 {
-    public class Academic
+    public partial class Academic
     {
         [Key]
         public int AcademicId { get; set; }
@@ -20,7 +20,7 @@ namespace uniTunes.Models
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }        
-        public Balance Balance { get; set; }
+        public Account Balance { get; set; }
         public LinkType Link { get; set; }
     }
 

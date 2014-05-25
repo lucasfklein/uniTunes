@@ -39,10 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserService.cs" />
+    <Compile Include="AcademicService.cs" />
+    <Compile Include="AccountService.cs" />
+    <Compile Include="CreditService.cs" />
+    <Compile Include="LogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\uniTunes.Data\Data.csproj">
+      <Project>{3afd7125-64f4-431b-ba52-f8cc63df0908}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\uniTunes.Models\Models.csproj">
       <Project>{79a6aff1-9161-4e84-b9fc-8eb713d2fc28}</Project>
       <Name>Models</Name>

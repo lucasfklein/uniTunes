@@ -6,11 +6,11 @@ using System.Text;
 
 namespace uniTunes.Models
 {
-    public class Balance
+    public partial class Account
     {
         [Key]
-        public int BalanceId { get; set; }
-        public double Value { get; set; }
+        public int AccountId { get; set; }
+        public double Balance { get; set; }
         public ICollection<Credit> Historic { get; set; }
     }
 }

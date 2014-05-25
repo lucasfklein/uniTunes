@@ -11,7 +11,7 @@ using uniTunes.Data;
 
 namespace uniTunes.UI.Controllers
 {
-    public class AcademicController : Controller
+    public class AcademicController : ControllerBase
     {
         private UniContext db = new UniContext();
 
