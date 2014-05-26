@@ -48,15 +48,21 @@
   <ItemGroup>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Academic.cs" />
+    <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="Models\Podcast.cs" />
+    <Compile Include="Models\Music.cs" />
     <Compile Include="Models\Log.cs" />
-    <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Credit.cs" />
-    <Compile Include="Models\IMedia.cs" />
+    <Compile Include="Models\Book.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Intefaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,7 +10,7 @@ namespace uniTunes.Data.Initializers
     /// <summary>
     /// Classe responsável pela ação de inserir registros nas tabelas ao Dropar/Criar a database.
     /// </summary>
-    public class UniInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<UniContext>
+    public class UniInitializer : System.Data.Entity.DropCreateDatabaseAlways<UniContext>
     {
         protected override void Seed(UniContext context)
         {

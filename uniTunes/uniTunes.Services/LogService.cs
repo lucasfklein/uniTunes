@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using uniTunes.Data.Infrastructure;
 using uniTunes.Data.Repositories;
-using uniTunes.Models.Models;
+using uniTunes.Models;
 
 namespace uniTunes.Services
 {

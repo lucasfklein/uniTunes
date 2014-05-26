@@ -28,6 +28,7 @@ namespace uniTunes.Models
     {
         Administrator = 1,
         Student = 2,
-        Author = 3
+        Professor = 3,
+        Employee = 4
     }
 }

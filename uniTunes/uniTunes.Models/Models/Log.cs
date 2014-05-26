@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace uniTunes.Models.Models
+namespace uniTunes.Models
 {
     public partial class Log
     {
