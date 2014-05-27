@@ -17,15 +17,6 @@ namespace uniTunes.UI.Controllers
         {
             return View();
         }
-        
-        // POST: Home/Login
-        [HttpPost]
-        public ActionResult Login()
-        {
-            UserContext.Initialize(new Academic());
-
-            return null;
-        }
 
         // GET: Home/Home
         [AuthFilter]
