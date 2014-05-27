@@ -13,7 +13,7 @@ uniTunes
 
 	Front-end: HTML5, CSS3, Javascript
 	Javascript libraries: jQuery
-	Design Patterns: Code-First, Entity Framework, Unit of Work, Repositories, Dependency Injection (Unity)
+	Design Patterns and Practices: Code-First, Entity Framework, Unit of Work, Repositories, Dependency Injection (StructureMap)
 	Others: Amazon RDS (SQL Server)
 ========================
 	Solution:
