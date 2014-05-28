@@ -46,5 +46,15 @@ namespace uniTunes.Services
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public bool RecoverPassword(string user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
