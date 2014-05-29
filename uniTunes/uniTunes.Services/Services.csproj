@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicService.cs" />
+    <Compile Include="MediaService.cs" />
     <Compile Include="AuthService.cs" />
     <Compile Include="CreditService.cs" />
     <Compile Include="LogService.cs" />

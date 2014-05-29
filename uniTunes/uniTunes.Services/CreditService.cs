@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using uniTunes.Data.Infrastructure;
+using uniTunes.Data.Repositories;
 using uniTunes.Models;
 
 namespace uniTunes.Services
 {
     public interface ICreditService
     {
-        Credit GetCredit(int id);
+        void AddCredit(Credit credit);
         IEnumerable<Credit> GetCredits();
         IEnumerable<CreditType> GetCreditTypes();
         bool SendOrder();
@@ -19,14 +21,24 @@ namespace uniTunes.Services
 
     public class CreditService : ICreditService
     {
+        private readonly ICreditRepository creditRepository;
+        private readonly IUnitOfWork unitOfWork;
+
+        public CreditService(ICreditRepository creditRepository, IUnitOfWork unitOfWork)
+        {
+            this.creditRepository = creditRepository;
+            this.unitOfWork = unitOfWork;
+        }
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Credit GetCredit(int id)
+        public void AddCredit(Credit credit)
         {
-            throw new NotImplementedException();
+            creditRepository.Add(credit);
+            unitOfWork.Commit();
         }
 
         /// <summary>
@@ -63,7 +75,7 @@ namespace uniTunes.Services
         public bool ProcessOrder()
         {
             throw new NotImplementedException();
-        }
+        }   
     }
 
 }
