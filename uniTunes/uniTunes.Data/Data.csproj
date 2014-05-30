@@ -47,7 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\AcademicConfiguration.cs" />
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Initializers\UniInitializer.cs" />
+    <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\BookRepository.cs" />
+    <Compile Include="Repositories\PodcastRepository.cs" />
+    <Compile Include="Repositories\VideoRepository.cs" />
+    <Compile Include="Repositories\MusicRepository.cs" />
     <Compile Include="Repositories\MediaRepository.cs" />
     <Compile Include="Repositories\CreditRepository.cs" />
     <Compile Include="Repositories\AcademicRepository.cs" />

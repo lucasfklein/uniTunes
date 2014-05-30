@@ -22,12 +22,15 @@
         @using (Html.BeginForm("Login", "Auth", FormMethod.Post, new { @class = "form-signin", @role = "form" }))
         {
             <h2 class="form-signin-heading">uniTunes</h2>
+
             @Html.TextBoxFor(x => x.User, new { @class = "form-control", required="required", autofocus="autofocus", placeholder="Usuário", maxlength = "14", size = "14"})
             @Html.PasswordFor(x => x.Password, new { @class = "form-control", required = "required", placeholder = "Senha", maxlength = "14", size = "14" })
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Lembrar?
             </label>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            
+            <button class="btn btn-info btn-block login" type="submit">Entrar</button>
+            <h6>Não possui uma conta? @Html.ActionLink("Registre-se aqui", "Register", "Auth", null, new {})</h6>
         }
     </div>
 </body>

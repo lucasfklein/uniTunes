@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StructureMap.Web.Pipeline;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -27,6 +28,11 @@ namespace uniTunes.UI
             {
                 context.Database.Initialize(false);
             }
+        }
+
+        protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            HttpContextLifecycle.DisposeAndClearAll();
         }
     }
 }

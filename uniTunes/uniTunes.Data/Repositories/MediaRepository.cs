@@ -3,15 +3,15 @@ using uniTunes.Models;
 
 namespace uniTunes.Data.Repositories
 {
-    public class AcademicRepository : RepositoryBase<Academic>, IAcademicRepository
+    public class MediaRepository : RepositoryBase<Media>, IMediaRepository
     {
-        public AcademicRepository(IDatabaseFactory databaseFactory)
+        public MediaRepository(IDatabaseFactory databaseFactory)
             : base(databaseFactory)
         {
         }
     }
 
-    public interface IAcademicRepository : IRepository<Academic>
+    public interface IMediaRepository : IRepository<Media>
     {
     }
 }

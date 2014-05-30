@@ -13,7 +13,7 @@ namespace uniTunes.UI.Controllers
     public class AuthController : Controller
     {
         private readonly IAuthService AuthService;
-        
+
         public AuthController(IAuthService authService)
         {
             this.AuthService = authService;
@@ -36,11 +36,17 @@ namespace uniTunes.UI.Controllers
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
         {
-            var academic = MapAcademic(model);
-
-            AuthService.Register(academic);
+            if (ModelState.IsValid)
+            {
+                var academic = MapAcademic(model);
+                AuthService.Register(academic);
+                return View();
+            }
+            else
+            {
+                return View(model);
+            }
             
-            return View();
         }
 
         // POST: Auth/Login
@@ -48,9 +54,9 @@ namespace uniTunes.UI.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
-            var academic = AuthService.Auth(0, "");
+            var academic = AuthService.Auth(model.User, model.Password);
 
-            if(academic != null)
+            if (academic != null)
             {
                 UserContext.Initialize(academic);
                 return RedirectToAction("Home", "Home");
@@ -97,10 +103,18 @@ namespace uniTunes.UI.Controllers
         }
 
         #region View Model Mapping
-        
+
         private Academic MapAcademic(RegisterViewModel model)
         {
-            throw new NotImplementedException();
+            return new Academic()
+            {
+                Email = model.Email,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Link = model.Link,
+                Login = model.Login,
+                Password = model.Password
+            };
         }
 
         #endregion

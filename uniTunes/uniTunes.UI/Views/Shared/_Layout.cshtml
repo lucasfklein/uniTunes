@@ -3,11 +3,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>uniTunes</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    <header>
+        @{
+            //TODO: Criar header HTML estático
+        }
+    </header>>
+    <div class="container">
         @RenderBody()
     </div>
+    <footer>
+        @{
+            //TODO: Criar footer HTML estático
+        }
+    </footer>
 </body>
 </html>

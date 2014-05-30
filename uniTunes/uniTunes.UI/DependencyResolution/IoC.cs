@@ -19,6 +19,8 @@ using StructureMap;
 using StructureMap.Graph;
 using StructureMap.Web;
 using StructureMap.Web.Pipeline;
+using uniTunes.Data.Infrastructure;
+using uniTunes.Data.Repositories;
 using uniTunes.Services;
 
 namespace uniTunes.UI.DependencyResolution
@@ -28,14 +30,18 @@ namespace uniTunes.UI.DependencyResolution
         public static IContainer Initialize()
         {
             ObjectFactory.Initialize(x =>
+            {
+                x.Scan(scan =>
                         {
-                            x.Scan(scan =>
-                                    {
-                                        scan.TheCallingAssembly();
-                                        scan.WithDefaultConventions();
-                                    });
-                            x.For<IAuthService>().Use<AuthService>();
+                            scan.TheCallingAssembly();
+                            scan.WithDefaultConventions();
                         });
+                x.For<IAuthService>().Use<AuthService>();
+                x.For<IDatabaseFactory>().Use<DatabaseFactory>();
+                x.For<IAcademicRepository>().Use<AcademicRepository>();
+                x.For<IUnitOfWork>().Use<UnitOfWork>();
+
+            });
             return ObjectFactory.Container;
         }
     }
