@@ -21,13 +21,13 @@ namespace uniTunes.UI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
-            // Configuração do Initializer
-            Database.SetInitializer(new UniInitializer());
-            // Força a inicialização
-            using (var context = new UniContext())
-            {
-                context.Database.Initialize(false);
-            }
+            //// Configuração do Initializer
+            //Database.SetInitializer(new UniInitializer());
+            //// Força a inicialização
+            //using (var context = new UniContext())
+            //{
+            //    context.Database.Initialize(false);
+            //}
         }
 
         protected void Application_EndRequest(object sender, EventArgs e)

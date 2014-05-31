@@ -22,9 +22,9 @@ namespace uniTunes.UI.Controllers
         // GET: Auth/Register
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult Register()
+        public PartialViewResult Register()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult AccessDenied()
