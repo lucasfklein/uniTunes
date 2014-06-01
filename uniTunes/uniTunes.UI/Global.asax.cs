@@ -20,14 +20,14 @@ namespace uniTunes.UI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            
-            //// Configuração do Initializer
-            //Database.SetInitializer(new UniInitializer());
-            //// Força a inicialização
-            //using (var context = new UniContext())
-            //{
-            //    context.Database.Initialize(false);
-            //}
+
+            System.Data.Entity.Database.SetInitializer(new UniInitializer());
+
+            using (var context = new UniContext())
+            {
+                Database.SetInitializer(new DropCreateDatabaseAlways<UniContext>());
+                //context.Database.Initialize(true);
+            }
         }
 
         protected void Application_EndRequest(object sender, EventArgs e)

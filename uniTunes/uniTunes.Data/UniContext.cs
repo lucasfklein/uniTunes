@@ -13,7 +13,6 @@ namespace uniTunes.Data
     {
         public UniContext(): base("name=UnisinosConnectionString")
         {
-            Database.SetInitializer<UniContext>(new CreateDatabaseIfNotExists<UniContext>());
         }
 
         public DbSet<Academic> Academics { get; set; }

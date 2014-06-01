@@ -20,7 +20,8 @@ namespace uniTunes.Data.Initializers
                     Login="admin",
                     Password="123",
                     FirstName="Administrator",
-                    Email="teste",
+                    Email="fcm1990@gmail.com",
+                    Link = LinkType.Administrator
                 }
             };
 

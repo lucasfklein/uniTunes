@@ -19,17 +19,20 @@ namespace uniTunes.UI.Controllers
             this.AuthService = authService;
         }
 
+        // GET: Auth
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         // GET: Auth/Register
         [AllowAnonymous]
         [HttpGet]
         public PartialViewResult Register()
         {
             return PartialView();
-        }
-
-        public ActionResult AccessDenied()
-        {
-            return View();
         }
 
         [AllowAnonymous]
@@ -46,7 +49,12 @@ namespace uniTunes.UI.Controllers
             {
                 return View(model);
             }
-            
+
+        }
+
+        public ActionResult AccessDenied()
+        {
+            return View();
         }
 
         // POST: Auth/Login

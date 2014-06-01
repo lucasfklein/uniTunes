@@ -11,6 +11,6 @@ namespace uniTunes.Models
         [Key]
         public int AccountId { get; set; }
         public double Balance { get; set; }
-        public ICollection<Credit> Historic { get; set; }
+        public virtual ICollection<Credit> Historic { get; set; }
     }
 }

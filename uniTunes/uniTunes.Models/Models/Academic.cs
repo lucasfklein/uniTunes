@@ -11,17 +11,19 @@ namespace uniTunes.Models
     {
         [Key]
         public int AcademicId { get; set; }
-        [Required]
+        [Required, StringLength(20)]
         public string Login { get; set; }
-        [Required]
+        [Required, StringLength(10)]
         public string Password { get; set; }
-        [Required]
+        [Required, StringLength(50)]
         public string FirstName { get; set; }
+        [StringLength(50)]
         public string LastName { get; set; }
-        [Required]
-        public string Email { get; set; }        
-        public Account Balance { get; set; }
+        [Required, StringLength(50)]
+        public string Email { get; set; }
         public LinkType Link { get; set; }
+
+        public virtual Account Account { get; set; }
     }
 
     public enum LinkType
