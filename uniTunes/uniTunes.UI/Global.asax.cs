@@ -23,11 +23,11 @@ namespace uniTunes.UI
 
             System.Data.Entity.Database.SetInitializer(new UniInitializer());
 
-            using (var context = new UniContext())
-            {
-                Database.SetInitializer(new DropCreateDatabaseAlways<UniContext>());
-                //context.Database.Initialize(true);
-            }
+            //using (var context = new UniContext())
+            //{
+            //    Database.SetInitializer(new DropCreateDatabaseAlways<UniContext>());
+            //    //context.Database.Initialize(true);
+            //}
         }
 
         protected void Application_EndRequest(object sender, EventArgs e)

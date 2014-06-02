@@ -1,9 +1,10 @@
 ﻿body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   color: #FFF;
-  background-color: #FD940A;
-  background-image: radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);
+  background-color: #77A688;
+    /*background-image: radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);*/
+    background-image: radial-gradient(circle, #9acfad,#77A688);
 }
 
 body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
@@ -15,13 +16,20 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 }
 
 #login-container{
-     background: rgba(80, 54, 54, 0.3);
+    top: 50%;
+    margin-top: 100px;
+    width: 350px;
+    background: white;
+    border-radius: 7px;
+    border: 1px solid #9acfad;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 125px rgba(255,255,255,0.35);
 }
 
 .form-signin {
   max-width: 350px;
   padding: 15px;
   margin: 0 auto;
+  color: black;
 }
 
 .form-signin .checkbox {
@@ -33,6 +41,6 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+  padding: 6px;
+  font-size: 14px;
 }

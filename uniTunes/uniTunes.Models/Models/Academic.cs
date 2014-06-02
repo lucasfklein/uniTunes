@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace uniTunes.Models
 {
@@ -23,6 +24,7 @@ namespace uniTunes.Models
         public string Email { get; set; }
         public LinkType Link { get; set; }
 
+        [NotMapped]
         public virtual Account Account { get; set; }
     }
 

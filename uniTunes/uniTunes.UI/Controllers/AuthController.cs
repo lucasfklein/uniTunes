@@ -19,12 +19,41 @@ namespace uniTunes.UI.Controllers
             this.AuthService = authService;
         }
 
-        // GET: Auth
+        // GET: Auth/Login
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Login()
         {
-            return View();
+            if (UserContext.IsAuthenticated)
+                return RedirectToAction("Index", "Home");
+            else
+                return View();
+        }
+
+        // POST: Auth/Login
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Login(LoginViewModel model)
+        {
+            if (UserContext.IsAuthenticated)
+                RedirectToAction("Index", "Home");
+
+            if (ModelState.IsValid)
+            {
+                var academic = AuthService.Auth(model.User, model.Password);
+
+                if (academic != null)
+                {
+                    UserContext.Initialize(academic);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("wrong-pass", "Usuário ou senha incorretos.");
+                    return View(model);
+                }
+            }
+            return View(model);
         }
 
         // GET: Auth/Register
@@ -35,6 +64,7 @@ namespace uniTunes.UI.Controllers
             return PartialView();
         }
 
+        // POST: Auth/Register
         [AllowAnonymous]
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
@@ -52,36 +82,13 @@ namespace uniTunes.UI.Controllers
 
         }
 
-        public ActionResult AccessDenied()
-        {
-            return View();
-        }
-
-        // POST: Auth/Login
-        [AllowAnonymous]
-        [HttpPost]
-        public ActionResult Login(LoginViewModel model)
-        {
-            var academic = AuthService.Auth(model.User, model.Password);
-
-            if (academic != null)
-            {
-                UserContext.Initialize(academic);
-                return RedirectToAction("Home", "Home");
-            }
-            else
-            {
-                return RedirectToAction("AccessDenied");
-            }
-        }
-
         // POST: Auth/Logoff
         [AllowAnonymous]
         [HttpPost]
         public ActionResult Logoff()
         {
             UserContext.Abandon();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index");
         }
 
         // POST: Auth/Unregister
@@ -89,8 +96,7 @@ namespace uniTunes.UI.Controllers
         public ActionResult Unregister()
         {
             AuthService.Unregister(UserContext.Current.User);
-
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Logoff");
         }
 
         // GET: Auth/RecoverPassword

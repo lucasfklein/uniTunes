@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- link rel="shortcut icon" href=""-->
-    <title>UniTunes - Login</title>
+    <title>UniTunes</title>
 
     @Scripts.Render("~/bundles/js")
     @Styles.Render("~/bundles/css")
@@ -21,42 +21,61 @@
 </head>
 <body>
 
+    <div class="navbar navbar-default navbar-fixed-top drop-shadow" style="border-bottom: 1px solid #77A688" id="top" role="banner">
+        <div class="container">
+            <div class="pull-right">
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade in" id="register-academic-modal" role="dialog" aria-labelledby="register-academic-modal" aria-hidden="true">
         <div class="modal-dialog" id="register-academic-container">
-            <div class="modal-content" style="background-color:#e48817;">
+            <div class="modal-content" style="background-color:#fff;">
                 <div class="modal-body">
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="login-container" class="drop-shadow">
+    <div id="login-container" class="container drop-shadow" >
 
         @using (Html.BeginForm("Login", "Auth", FormMethod.Post, new { @class = "form-signin", @role = "form" }))
         {
-            <h1 class="form-signin-heading text-center"><i>uniTunes</i></h1>
-
-            <hr class="colorgraph">
-
+            <h4 class="form-signin-heading text-center">Bem-vindo ao UniTunes.</h4>
+            <p style="color: #8899a6">Compartilhe suas mídias, explore por seus interesses e adquira suas favoritas!</p>
+            
+            @Html.ValidationSummary(string.Empty, new { @class = "alert-danger" })
             <div class="form-group">
                 @Html.TextBoxFor(x => x.User, new { @class = "form-control", required = "required", autofocus = "autofocus", placeholder = "Usuário", maxlength = "14", size = "14" })
             </div>
-            <div class="a">
+            <div class="form-group">
                 @Html.PasswordFor(x => x.Password, new { @class = "form-control", required = "required", placeholder = "Senha", maxlength = "14", size = "14" })
             </div>
 
             <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Lembrar?
-                <a href="" id="recover-password" class="pull-right" style="color:#6f3716">Esqueceu a senha?</a>
+                <input type="checkbox" value="remember-me"><span style="font-size: 12px; color: #8899a6">Lembrar-me</span>
+                <a href="" id="recover-password" class="pull-right" style="font-size: 12px; color:#6f3716">Esqueceu a senha?</a>
             </label>
-
-            <hr class="colorgraph">
-
-            <button class="btn btn-warning btn-block login" type="submit">Entrar</button>
-            <div class="text-center">
-                <p>Não possui uma conta? <a id="register" style="color:#6f3716" data-toggle="modal" data-target="#register-academic-modal">Registre-se aqui</a></p>
+             
+            <button class="btn btn-success btn-block login" type="submit">Entrar</button>
+            <div class="text-right">
+                <span style="font-size:12px">Novo? <a id="register" style="color:#6f3716" data-toggle="modal" data-target="#register-academic-modal">Registre-se!</a></span>
             </div>
         }
+    </div>
+
+    <div class="footer" style="font-size:11px; margin-top: 50px; display:block; text-align: center; width: 100%;">
+        <ul style="display:inline-block;">
+            <li style="display:inline"><a style="color:white">Sobre</a></li>
+            <li style="display: inline">·</li>
+            <li style="display:inline"><a style="color:white">Ajuda</a></li>
+            <li style="display: inline">·</li>
+            <li style="display:inline"><a style="color:white">Termos</a></li>
+            <li style="display: inline">·</li>
+            <li style="display:inline"><a style="color:white">Privacidade</a></li>
+            <li style="display: inline">·</li>
+            <li style="display:inline"><a style="color:white">© 2014 UniTunes</a></li>
+        </ul>
     </div>
 
     <script>
