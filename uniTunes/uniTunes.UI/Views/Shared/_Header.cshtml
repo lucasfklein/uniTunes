@@ -1,0 +1,50 @@
+﻿
+<header>
+    <div class="navbar navbar-default navbar-fixed-top drop-shadow" style="border-bottom: 1px solid #77A688" id="top" role="banner">
+        <div class="container">
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#search">Procurar</a></li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bem-vindo, User<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/user/preferences"><span class="glyphicon glyphicon-cog"></span>Preferências</a></li>
+                            <li><a href="/user/preferences"><span class="glyphicon glyphicon-book"></span>Minhas Mídias</a></li>
+                            <li><a href="/help/support"><span class="glyphicon glyphicon-envelope"></span> Contato/Suporte</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/auth/logout"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+
+    $(function () {
+
+        $('a[href="#search"]').on('click', function (event) {
+            event.preventDefault();
+            $('#search').addClass('open');
+            $('#search > form > input[type="search"]').focus();
+        });
+
+        $('#search, #search button.close').on('click keyup', function (event) {
+            if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+                $(this).removeClass('open');
+            }
+        });
+
+        $('form').submit(function (event) {
+            event.preventDefault();
+            return false;
+        })
+    });
+
+</script>

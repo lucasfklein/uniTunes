@@ -132,9 +132,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="Views\Account\" />
-    <Folder Include="Views\ControllerBase\" />
     <Folder Include="Views\Media\" />
   </ItemGroup>
   <ItemGroup>
@@ -144,7 +141,9 @@
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="Context\UserContext.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\CreditController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="ViewModels\RecoverPasswordViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
@@ -173,6 +172,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\unitunes.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.js.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -191,14 +191,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
-    <Content Include="Views\Academic\Create.cshtml" />
-    <Content Include="Views\Academic\Delete.cshtml" />
-    <Content Include="Views\Academic\Details.cshtml" />
-    <Content Include="Views\Academic\Edit.cshtml" />
-    <Content Include="Views\Academic\Index.cshtml" />
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\Auth\RecoverPassword.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Credit\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

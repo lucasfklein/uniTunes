@@ -15,24 +15,12 @@
 
 </head>
 <body>
-    <header>
-        <div class="navbar navbar-default navbar-fixed-top drop-shadow" style="border-bottom: 1px solid #77A688" id="top" role="banner">
-            <div class="container">
-                <div class="pull-right">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#search">Procurar</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
+        @Html.Partial("_Header")
     <div class="container">
         @RenderBody()
     </div>
     <footer>
-        @{
-    //TODO: Criar footer HTML estático
-        }
+        @Html.Partial("_Footer")
     </footer>
 
     <div id="search">
@@ -42,28 +30,7 @@
             <button type="submit" class="btn btn-primary">Procurar</button>
         </form>
     </div>
-    <script>
-
-        $(function () {
-            $('a[href="#search"]').on('click', function (event) {
-                event.preventDefault();
-                $('#search').addClass('open');
-                $('#search > form > input[type="search"]').focus();
-            });
-
-            $('#search, #search button.close').on('click keyup', function (event) {
-                if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-                    $(this).removeClass('open');
-                }
-            });
-
-            $('form').submit(function (event) {
-                event.preventDefault();
-                return false;
-            })
-        });
-
-    </script>
+   
 </body>
 </html>
 
