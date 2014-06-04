@@ -13,8 +13,8 @@ namespace uniTunes.UI
                         "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/bundles/css").Include(
+                        "~/Content/normalize.css",
                         "~/Content/bootstrap/bootstrap.css",
-                        "~/Content/reset.css",
                         "~/Content/base.css",
                         "~/Content/site.css",
                         "~/Content/extensions.css"));
