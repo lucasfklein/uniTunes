@@ -73,6 +73,7 @@ namespace uniTunes.UI.Controllers
             {
                 var academic = MapAcademic(model);
                 AuthService.Register(academic);
+
                 return View();
             }
             else
@@ -88,7 +89,7 @@ namespace uniTunes.UI.Controllers
         public ActionResult Logoff()
         {
             UserContext.Abandon();
-            return RedirectToAction("Index");
+            return RedirectToAction("Login");
         }
 
         // POST: Auth/Unregister

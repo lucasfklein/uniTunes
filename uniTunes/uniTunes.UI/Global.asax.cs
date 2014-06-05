@@ -9,6 +9,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using uniTunes.Data;
 using uniTunes.Data.Initializers;
+using uniTunes.UI.Controllers;
 
 namespace uniTunes.UI
 {

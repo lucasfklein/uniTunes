@@ -10,10 +10,11 @@ using uniTunes.UI.ViewModels;
 
 namespace uniTunes.UI.Controllers
 {
+    
     public class HomeController : Controller
     {
         // GET: Home
-        [AllowAnonymous]
+        [AuthFilter]
         public ActionResult Index()
         {
             //TODO: Em um futuro, persistir os Menus no banco vinculando com acessos do usuário
@@ -22,21 +23,20 @@ namespace uniTunes.UI.Controllers
             {
                 Menus = new List<MenuItem>() 
                 { 
-                    new MenuItem("buy-credit","Comprar Créditos", "white", "#"),
-                    new MenuItem("search-media","Pesquisar Mídias", "green", "#"),
-                    new MenuItem("upload-media","Upload de Mídias", "blue", "#"),
-                    new MenuItem("permissions-panel","Gerenciar Acessos", "yellow", "#"),
-                    new MenuItem("reports","Relatórios", "pink", "#"),
-                    new MenuItem("my-medias","Minhas Mídias", "white", "#"),
-                    new MenuItem("config","Configurações", "red", "#")
+                    new MenuItem("buy-credit","Comprar Créditos", "white", "/Home/Maintenance"),
+                    new MenuItem("search-media","Pesquisar Mídias", "green", "/Home/Maintenance"),
+                    new MenuItem("upload-media","Upload de Mídias", "blue", "/Home/Maintenance"),
+                    new MenuItem("permissions-panel","Gerenciar Acessos", "yellow", "/Home/Maintenance"),
+                    new MenuItem("reports","Relatórios", "pink", "/Home/Maintenance"),
+                    new MenuItem("my-medias","Minhas Mídias", "white", "/Home/Maintenance"),
+                    new MenuItem("config","Configurações", "red", "/Home/Maintenance")
                 }
             };
             return View(model);
         }
 
-        // GET: Home/Home
-        [AuthFilter]
-        public ActionResult Home()
+        // GET: Home/Maintenance
+        public ActionResult Maintenance()
         {
             return View();
         }

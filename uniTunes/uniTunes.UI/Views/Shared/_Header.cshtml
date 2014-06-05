@@ -12,11 +12,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bem-vindo, @(UserContext.Current != null ? UserContext.Current.User.FirstName : String.Empty)<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><span class="glyphicon glyphicon-cog"></span>Preferências</a></li>
-                            <li><a href="/user/preferences"><span class="glyphicon glyphicon-book"></span>Minhas Mídias</a></li>
-                            <li><a href="/help/support"><span class="glyphicon glyphicon-envelope"></span> Contato/Suporte</a></li>
+                            <li><a href="/user/preferences"><span class="glyphicon glyphicon-cog"></span> Preferências</a></li>
+                            <li><a href="/user/preferences"><span class="glyphicon glyphicon-book"></span> Minhas Mídias</a></li>
+                            <li><a href="/help/support"><span class="glyphicon glyphicon-envelope"></span> Contato</a></li>
                             <li class="divider"></li>
-                            <li><a href="/auth/logout"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                            <li>@Html.ActionLink("<span class='glyphicon glyphicon-envelope'>   Logout</span>", "Logout", "Auth")
                         </ul>
                     </li>
                 </ul>
