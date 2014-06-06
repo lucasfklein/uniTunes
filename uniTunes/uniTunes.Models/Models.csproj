@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Academic.cs" />
+    <Compile Include="Models\Collection.cs" />
     <Compile Include="Models\Media.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Models\Podcast.cs" />
