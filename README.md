@@ -5,8 +5,8 @@ uniTunes
 
 ========================
 	Entregas:
-	- Data de Entrega Parcial: 05/06
-	- Data de Entrega Final: 12/06
+	- Data de Entrega Parcial: 12/06
+	- Data de Entrega Final: 19/06
 ========================
 	Architecture:
 	ASP.NET MVC 5
@@ -14,7 +14,7 @@ uniTunes
 	Front-end: HTML5, CSS3, Javascript
 	Javascript libraries: jQuery
 	Design Patterns and Practices: Code-First, Entity Framework, Unit of Work, Repositories, Dependency Injection (StructureMap)
-	Others: Amazon RDS (SQL Server)
+	Others: Amazon RDS (SQL Server), Twitter Bootstrap
 ========================
 	Solution:
 	- uniTunes.Common
