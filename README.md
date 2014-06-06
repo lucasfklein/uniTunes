@@ -14,7 +14,7 @@ uniTunes
 	Front-end: HTML5, CSS3, Javascript
 	Javascript libraries: jQuery
 	Design Patterns and Practices: Code-First, Entity Framework, Unit of Work, Repositories, Dependency Injection (StructureMap)
-	Others: Amazon RDS (SQL Server), Twitter Bootstrap
+	Others: Windows Azure (Host), Amazon RDS (SGBD: SQL Server), Twitter Bootstrap
 ========================
 	Solution:
 	- uniTunes.Common
