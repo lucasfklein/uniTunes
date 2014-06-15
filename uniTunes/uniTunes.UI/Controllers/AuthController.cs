@@ -86,7 +86,7 @@ namespace uniTunes.UI.Controllers
         // POST: Auth/Logoff
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult Logoff()
+        public ActionResult Logout()
         {
             UserContext.Abandon();
             return RedirectToAction("Login");

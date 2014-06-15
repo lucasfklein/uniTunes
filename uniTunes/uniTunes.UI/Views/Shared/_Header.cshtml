@@ -10,13 +10,13 @@
             <div class="pull-right">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bem-vindo, @(UserContext.Current != null ? UserContext.Current.User.FirstName : String.Empty)<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bem-vindo, @(UserContext.Current != null ? UserContext.Current.User.FirstName : String.Empty) <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="/user/preferences"><span class="glyphicon glyphicon-cog"></span> Preferências</a></li>
                             <li><a href="/user/preferences"><span class="glyphicon glyphicon-book"></span> Minhas Mídias</a></li>
                             <li><a href="/help/support"><span class="glyphicon glyphicon-envelope"></span> Contato</a></li>
                             <li class="divider"></li>
-                            <li>@Html.ActionLink("<span class='glyphicon glyphicon-envelope'>   Logout</span>", "Logout", "Auth")
+                            <li><a href="~/Auth/Logout"><span class="glyphicon glyphicon-envelope"> Logout</span></a></li>
                         </ul>
                     </li>
                 </ul>

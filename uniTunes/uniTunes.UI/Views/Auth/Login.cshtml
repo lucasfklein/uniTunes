@@ -12,7 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <!-- link rel="shortcut icon" href=""-->
+    
     <title>UniTunes</title>
 
     @Scripts.Render("~/bundles/js")
@@ -28,7 +30,7 @@
         </div>
     </div>
 
-    <div class="modal fade in" id="register-academic-modal" role="dialog" aria-labelledby="register-academic-modal" aria-hidden="true">
+    <div class="modal fade in" id="auth-modal" role="dialog" aria-labelledby="auth-modal" aria-hidden="true">
         <div class="modal-dialog" id="register-academic-container" style=" width: 350px;">
             <div class="modal-content" style="background-color: #fff;">
                 <div class="modal-body">
@@ -54,12 +56,12 @@
 
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"><span style="font-size: 12px; color: #8899a6">Lembrar-me</span>
-                <a href="" id="recover-password" class="pull-right" style="font-size: 12px; color: #47855d">Esqueceu a senha?</a>
+                <a href="" id="recover-password" data-toggle="modal" data-target="#auth-modal"  class="pull-right" style="font-size: 12px; color: #47855d">Esqueceu a senha?</a>
             </label>
              
             <button class="btn btn-success btn-block login" type="submit">Entrar</button>
             <div class="text-right">
-                <span style="font-size:12px">Novo? <a id="register" style="color: #47855d; " data-toggle="modal" data-target="#register-academic-modal">Registre-se!</a></span>
+                <span style="font-size:12px">Novo? <a id="register" style="color: #47855d; cursor: pointer;" data-toggle="modal" data-target="#auth-modal">Registre-se!</a></span>
             </div>
         }
     </div>
@@ -85,14 +87,15 @@
                 var url = "/Auth/Register"; // the url to the controller
                 $.get(url, function (data) {
                     $('.modal-body').html(data);
-                    $('#register-academic-modal').modal('show');
+                    $('#auth-modal').modal('show');
                 });
             });
 
             $('#recover-password').click(function () {
                 var url = "/Auth/RecoverPassword";
                 $.get(url, function (data) {
-                    $('#login-container').html(data);
+                    $('.modal-body').html(data);
+                    $('#auth-modal').modal('show');
                 });
             });
 
