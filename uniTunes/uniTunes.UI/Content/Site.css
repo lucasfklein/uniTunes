@@ -1,10 +1,16 @@
-﻿body {
+﻿html {
+    min-height: 100%;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 50px;
     color: #FFF;
-    background-color: #0F8B6A;
+    display: block;
+    top: 0px;
     /*background-image: radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);*/
-    background-image: radial-gradient(circle, #9acfad, #0F8B6A);
+    /*background-image: radial-gradient(circle, #9acfad, #0F8B6A);*/
+    background: radial-gradient(circle, #47B295, #004050);
 }
 
     body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {

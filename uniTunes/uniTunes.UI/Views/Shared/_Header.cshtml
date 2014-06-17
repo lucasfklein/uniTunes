@@ -1,50 +1,52 @@
 ﻿@using uniTunes.UI;
-<header>
-    <div class="navbar navbar-default navbar-fixed-top drop-shadow" style="border-bottom: 1px solid #77A688" id="top" role="banner">
-        <div class="container">
-            <div class="pull-right">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#search">Procurar</a></li>
-                </ul>
-            </div>
-            <div class="pull-right">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bem-vindo, @(UserContext.Current != null ? UserContext.Current.User.FirstName : String.Empty) <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><span class="glyphicon glyphicon-cog"></span> Preferências</a></li>
-                            <li><a href="/user/preferences"><span class="glyphicon glyphicon-book"></span> Minhas Mídias</a></li>
-                            <li><a href="/help/support"><span class="glyphicon glyphicon-envelope"></span> Contato</a></li>
-                            <li class="divider"></li>
-                            <li><a href="~/Auth/Logout"><span class="glyphicon glyphicon-envelope"> Logout</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
+
+@if(UserContext.Current != null && UserContext.Current.User != null)
+{
+    <header>
+        <div class="navbar navbar-default navbar-fixed-top drop-shadow" style="border-bottom: 1px solid #77A688" id="top" role="banner">
+            <div class="container">
+                <div>
+                    <ul class="nav navbar-nav" style="width: 100%;">
+                        <li><a href="/Home/Index"><img src="@Url.Content("~/Content/Images/network.png")" width="26" height="26" style="margin: 0px; padding: 0px;" />&nbsp;UniTunes</a></li>
+                        <li class="pull-right"><a href="#search">Procurar</a></li>
+                        <li class="pull-right dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@(UserContext.Current != null ? UserContext.Current.User.FirstName : String.Empty) <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Profile/Preferences"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;Preferências</a></li>
+                                <li><a href="/Help/Contact"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Contato</a></li>
+                                <li><a href="/Help/Support"><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;Suporte</a></li>
+                                <li class="divider"></li>
+                                <li><a href="~/Auth/Logout"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="pull-right"><a>Saldo: R$ @((UserContext.Current.User.Account != null ? UserContext.Current.User.Account.Balance : 0).ToString("0.00"))</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<script>
+    <script>
 
-    $(function () {
+        $(function () {
 
-        $('a[href="#search"]').on('click', function (event) {
-            event.preventDefault();
-            $('#search').addClass('open');
-            $('#search > form > input[type="search"]').focus();
+            $('a[href="#search"]').on('click', function (event) {
+                event.preventDefault();
+                $('#search').addClass('open');
+                $('#search > form > input[type="search"]').focus();
+            });
+
+            $('#search, #search button.close').on('click keyup', function (event) {
+                if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+                    $(this).removeClass('open');
+                }
+            });
+
+            $('form').submit(function (event) {
+                event.preventDefault();
+                return false;
+            })
         });
 
-        $('#search, #search button.close').on('click keyup', function (event) {
-            if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-                $(this).removeClass('open');
-            }
-        });
-
-        $('form').submit(function (event) {
-            event.preventDefault();
-            return false;
-        })
-    });
-
-</script>
+    </script>
+}

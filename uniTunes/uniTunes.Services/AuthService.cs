@@ -11,10 +11,12 @@ namespace uniTunes.Services
 {
     public interface IAuthService
     {
+        Academic GetAcademic(string login);
         Academic Auth(string login, string pass);
         void Register(Academic academic);
         void Unregister(Academic academic);
         bool RecoverPassword(string user);
+        string GetSecretQuestion(string email);
     }
 
     public class AuthService : IAuthService
@@ -26,6 +28,11 @@ namespace uniTunes.Services
         {
             this.academicRepository = academicRepository;
             this.unitOfWork = unitOfWork;
+        }
+
+        public Academic GetAcademic(string login)
+        {
+            return academicRepository.Get(x => x.Login == login);
         }
 
         /// <summary>
@@ -68,7 +75,24 @@ namespace uniTunes.Services
         /// <returns></returns>
         public bool RecoverPassword(string user)
         {
+            //TODO: Terminar de implementar recuperação de senha
+
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public string GetSecretQuestion(string email)
+        {
+            var academic = academicRepository.Get(x => x.Email == email);
+
+            if (academic != null)
+                return academic.Email;
+            else
+                return null;
         }
     }
 }

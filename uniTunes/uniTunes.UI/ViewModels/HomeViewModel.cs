@@ -15,17 +15,17 @@ namespace uniTunes.UI.ViewModels
         public MenuItem()
         { }
 
-        public MenuItem(string k, string n, string c, string u)
+        public MenuItem(string name, string color, string url, string image)
         {
-            Key = k;
-            Name = n;
-            Color = c;
-            Url = u;
+            Name = name;
+            Color = color;
+            Url = url;
+            Image = image;
         }
 
-        public string Key { get; set; }
         public string Name { get; set; }
         public string Color { get; set; }
         public string Url { get; set; }
+        public string Image { get; set; }
     }
 }

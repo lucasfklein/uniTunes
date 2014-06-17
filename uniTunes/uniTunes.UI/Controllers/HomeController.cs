@@ -23,13 +23,13 @@ namespace uniTunes.UI.Controllers
             {
                 Menus = new List<MenuItem>() 
                 { 
-                    new MenuItem("buy-credit","Comprar Créditos", "white", "/Home/Maintenance"),
-                    new MenuItem("search-media","Pesquisar Mídias", "green", "/Home/Maintenance"),
-                    new MenuItem("upload-media","Upload de Mídias", "blue", "/Home/Maintenance"),
-                    new MenuItem("permissions-panel","Gerenciar Acessos", "yellow", "/Home/Maintenance"),
-                    new MenuItem("reports","Relatórios", "pink", "/Home/Maintenance"),
-                    new MenuItem("my-medias","Minhas Mídias", "white", "/Home/Maintenance"),
-                    new MenuItem("config","Configurações", "red", "/Home/Maintenance")
+                    new MenuItem("Comprar Créditos", "white", "/Home/Maintenance", "buy-credit.png" ),
+                    new MenuItem("Pesquisar Mídias", "green", "/Home/Maintenance", "search.png"),
+                    new MenuItem("Upload de Mídias", "blue", "/Home/Maintenance", "upload.png"),
+                    new MenuItem("Gerenciar Acessos", "yellow", "/Home/Maintenance", "permissions.png"),
+                    new MenuItem("Relatórios", "pink", "/Home/Maintenance", "reports.png"),
+                    new MenuItem("Minhas Mídias", "white", "/Home/Maintenance", "media.png"),
+                    new MenuItem("Configurações", "red", "/Home/Maintenance", "configuration.png")
                 }
             };
             return View(model);

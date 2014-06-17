@@ -8,10 +8,10 @@ namespace uniTunes.UI.Controllers
 {
     public class ProfileController : Controller
     {
-        // GET: Profile
-        public ActionResult Index()
+        // GET: Profile/Preferences
+        public PartialViewResult Preferences()
         {
-            return View();
+            return PartialView();
         }
 
     }

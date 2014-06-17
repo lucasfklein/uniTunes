@@ -142,7 +142,9 @@
     <Compile Include="Context\UserContext.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CreditController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MediaController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\RecoverPasswordViewModel.cs" />
@@ -160,6 +162,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\buy-credit.png" />
+    <Content Include="Content\images\configuration.png" />
+    <Content Include="Content\images\favicon.png" />
+    <Content Include="Content\images\media.png" />
+    <Content Include="Content\images\network.ico" />
+    <Content Include="Content\images\network.png" />
+    <Content Include="Content\images\permissions.png" />
+    <Content Include="Content\images\reports.png" />
+    <Content Include="Content\images\search.png" />
+    <Content Include="Content\images\upload.png" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
@@ -204,6 +216,9 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\Maintenance.cshtml" />
+    <Content Include="Views\Help\Support.cshtml" />
+    <Content Include="Views\Help\Contact.cshtml" />
+    <Content Include="Views\Profile\Preferences.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

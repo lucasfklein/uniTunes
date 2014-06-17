@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using uniTunes.Models;
+using System.Data.SqlClient;
 
 namespace uniTunes.Data.Initializers
 {
@@ -14,6 +15,8 @@ namespace uniTunes.Data.Initializers
     {
         protected override void Seed(UniContext context)
         {
+            SqlConnection.ClearAllPools();
+
             var students = new List<Academic>
             {
                 new Academic{
@@ -21,6 +24,8 @@ namespace uniTunes.Data.Initializers
                     Password="123",
                     FirstName="Administrator",
                     Email="fcm1990@gmail.com",
+                    Question = "Quanto é 2+2?",
+                    Answer = "4",
                     Link = LinkType.Administrator
                 }
             };

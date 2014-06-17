@@ -80,12 +80,10 @@ namespace uniTunes.UI.Controllers
             {
                 return View(model);
             }
-
         }
 
         // POST: Auth/Logoff
         [AllowAnonymous]
-        [HttpPost]
         public ActionResult Logout()
         {
             UserContext.Abandon();
@@ -103,18 +101,32 @@ namespace uniTunes.UI.Controllers
         // GET: Auth/RecoverPassword
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult RecoverPassword()
+        public PartialViewResult RecoverPassword()
         {
-            return View();
+            return PartialView();
         }
 
+        // GET: Auth/GetSecretQuestion
+        public JsonResult GetSecretQuestion(string email)
+        {
+            return Json(AuthService.GetSecretQuestion(email));
+        }
+        
         // GET: Auth/RecoverPassword
         [AllowAnonymous]
         [HttpPost]
         public ActionResult RecoverPassword(RecoverPasswordViewModel model)
         {
-            AuthService.RecoverPassword(string.Empty);
-            return View();
+            if (ModelState.IsValid)
+            {
+                AuthService.RecoverPassword(model.Email);
+
+                return View();
+            }
+            else
+            {
+                return View(model);
+            }
         }
 
         #region View Model Mapping

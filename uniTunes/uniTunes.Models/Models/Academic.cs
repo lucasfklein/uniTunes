@@ -22,6 +22,13 @@ namespace uniTunes.Models
         public string LastName { get; set; }
         [Required, StringLength(50)]
         public string Email { get; set; }
+
+        [Required, StringLength(200)]
+        public string Question { get; set; }
+
+        [Required, StringLength(200)]
+        public string Answer { get; set; }
+
         public LinkType Link { get; set; }
 
         [NotMapped]
