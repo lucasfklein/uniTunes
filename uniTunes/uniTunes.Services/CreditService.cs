@@ -22,11 +22,13 @@ namespace uniTunes.Services
     public class CreditService : ICreditService
     {
         private readonly ICreditRepository creditRepository;
+        private readonly IAcademicRepository academicRepository;
         private readonly IUnitOfWork unitOfWork;
 
-        public CreditService(ICreditRepository creditRepository, IUnitOfWork unitOfWork)
+        public CreditService(ICreditRepository creditRepository, IAcademicRepository academicRepository, IUnitOfWork unitOfWork)
         {
             this.creditRepository = creditRepository;
+            this.academicRepository = academicRepository;
             this.unitOfWork = unitOfWork;
         }
 
@@ -37,7 +39,13 @@ namespace uniTunes.Services
         /// <returns></returns>
         public void AddCredit(Credit credit)
         {
+            var academic = academicRepository.Get(x => x.AcademicId == credit.AcademicId);
+            
             creditRepository.Add(credit);
+
+            academic.Balance += credit.Value;
+            academicRepository.Update(academic);
+
             unitOfWork.Commit();
         }
 

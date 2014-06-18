@@ -26,6 +26,7 @@ namespace uniTunes.Data.Initializers
                     Email="fcm1990@gmail.com",
                     Question = "Quanto é 2+2?",
                     Answer = "4",
+                    Balance = 0,
                     Link = LinkType.Administrator
                 }
             };

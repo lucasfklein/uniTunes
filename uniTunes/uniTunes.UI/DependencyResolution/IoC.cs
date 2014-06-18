@@ -36,9 +36,14 @@ namespace uniTunes.UI.DependencyResolution
                             scan.TheCallingAssembly();
                             scan.WithDefaultConventions();
                         });
+
                 x.For<IAuthService>().Use<AuthService>();
-                x.For<IDatabaseFactory>().Use<DatabaseFactory>();
+                x.For<ICreditService>().Use<CreditService>();
+
                 x.For<IAcademicRepository>().Use<AcademicRepository>();
+                x.For<ICreditRepository>().Use<CreditRepository>();
+
+                x.For<IDatabaseFactory>().Use<DatabaseFactory>();
                 x.For<IUnitOfWork>().Use<UnitOfWork>();
 
             });

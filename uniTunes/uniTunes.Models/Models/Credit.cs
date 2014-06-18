@@ -13,14 +13,12 @@ namespace uniTunes.Models
         [ScaffoldColumn(false)]
         public int CreditId { get; set; }
 
-        [DisplayName("Account")]
-        public int AccountId { get; set; }
+        [DisplayName("Academic")]
+        public int AcademicId { get; set; }
 
         public double Value { get; set; }
         public CreditStatus Status { get; set; }
         public CreditType Type { get; set; }
-
-        public virtual Account Account { get; set; }
     }
 
     public enum CreditStatus

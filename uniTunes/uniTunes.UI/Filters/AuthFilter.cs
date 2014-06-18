@@ -25,7 +25,7 @@ namespace uniMedia.UI.ActionFilters
             {
                 if (!UserContext.IsAuthenticated)
                 {
-                    filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Home" }, { "action", "Index" } });
+                    filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Auth" }, { "action", "Login" } });
                 }
             }
 

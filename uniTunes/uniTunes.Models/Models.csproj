@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Academic.cs" />
     <Compile Include="Models\Collection.cs" />
     <Compile Include="Models\Media.cs" />

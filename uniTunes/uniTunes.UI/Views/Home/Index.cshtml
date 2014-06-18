@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    string message = ViewContext.RouteData.Values["Message"] != null ? ViewContext.RouteData.Values["Message"].ToString() : string.Empty;
 }
 <style>
     .box {
@@ -31,27 +33,32 @@
         height: 100%;
     }
 
-    .menu-link:hover{
-        text-decoration: none;
-        background-color: black;
-        opacity: 0.2;
-        color: white;
-    }
-
+        .menu-link:hover {
+            text-decoration: none;
+            background-color: black;
+            opacity: 0.2;
+            color: white;
+        }
 </style>
 <div class="container" style="margin-top:30px;">
-    <div class="row">
 
+    @if (!string.IsNullOrEmpty(message))
+    {     
+        <div>
+            @message
+        </div>
+    }
+
+    <div class="row">
         <div id="menu">
             <ul>
-
                 @foreach (var item in Model.Menus)
                 {
                     <li class="col-xs-4 col-8 col-sm-8 col-lg-8 box drop-shadow" style="@string.Format("background: #3BA89B url(../../Content/images/{0}) no-repeat center center;", item.Image)">
                         @Html.ActionLink(
                             item.Name,
-                            "Maintenance",
-                            "Home",
+                            item.Action,
+                            item.Controller,
                             null,
                             new { @class = "menu-link" }
                         )

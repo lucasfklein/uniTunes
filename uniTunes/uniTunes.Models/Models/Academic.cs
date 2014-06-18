@@ -29,10 +29,11 @@ namespace uniTunes.Models
         [Required, StringLength(200)]
         public string Answer { get; set; }
 
+        public double Balance { get; set; }
+
         public LinkType Link { get; set; }
 
-        [NotMapped]
-        public virtual Account Account { get; set; }
+        public virtual List<Credit> Historic { get; set; }
     }
 
     public enum LinkType

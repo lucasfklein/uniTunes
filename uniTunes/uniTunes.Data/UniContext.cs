@@ -16,7 +16,6 @@ namespace uniTunes.Data
         }
 
         public DbSet<Academic> Academics { get; set; }
-        public DbSet<Account> Accounts { get; set; }
         public DbSet<Collection> Collection { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Credit> Credits { get; set; }

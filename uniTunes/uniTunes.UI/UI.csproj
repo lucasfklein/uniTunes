@@ -131,8 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Media\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -146,6 +144,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MediaController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="ViewModels\BuyCreditViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\RecoverPasswordViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -171,6 +170,7 @@
     <Content Include="Content\images\permissions.png" />
     <Content Include="Content\images\reports.png" />
     <Content Include="Content\images\search.png" />
+    <Content Include="Content\images\shopping-cart.png" />
     <Content Include="Content\images\upload.png" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
@@ -211,7 +211,6 @@
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\Auth\RecoverPassword.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
-    <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Credit\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -219,6 +218,7 @@
     <Content Include="Views\Help\Support.cshtml" />
     <Content Include="Views\Help\Contact.cshtml" />
     <Content Include="Views\Profile\Preferences.cshtml" />
+    <Content Include="Views\Media\ShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

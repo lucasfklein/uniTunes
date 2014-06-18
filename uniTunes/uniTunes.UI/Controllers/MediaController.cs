@@ -27,5 +27,10 @@ namespace uniTunes.UI.Controllers
         {
             return View();
         }
+
+        public PartialViewResult ShoppingCart()
+        {
+            return PartialView();
+        }
     }
 }

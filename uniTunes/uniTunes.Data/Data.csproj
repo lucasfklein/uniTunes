@@ -50,7 +50,6 @@
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Initializers\UniInitializer.cs" />
-    <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\BookRepository.cs" />
     <Compile Include="Repositories\PodcastRepository.cs" />
     <Compile Include="Repositories\VideoRepository.cs" />
