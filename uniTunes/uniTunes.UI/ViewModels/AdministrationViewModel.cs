@@ -6,7 +6,7 @@ using uniTunes.UI.ViewModels.Classes;
 
 namespace uniTunes.UI.ViewModels
 {
-    public class HomeViewModel
+    public class AdministrationViewModel
     {
         public List<MenuItem> Menus { get; set; }
     }

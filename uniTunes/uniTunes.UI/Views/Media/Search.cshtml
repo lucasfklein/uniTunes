@@ -1,0 +1,97 @@
+﻿@model uniTunes.UI.ViewModels.MediaListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Mídias</h2>
+
+@section scripts{
+
+    <script>
+        var AdicionarCarrinho = function (media) {
+
+            $.ajax({
+                url: 'AddToCart',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: '{ id:' + media + '}',
+                success: function (data) {
+                    alert(data);
+                },
+                error: function (data) {
+                    alert(data);
+                }
+            });
+            return false;
+        };
+
+        var Favoritar = function (id) {
+            alert("Favoritar" + id);
+        };
+
+    </script>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Descrição
+        </th>
+        <th>
+            Preço
+        </th>
+        <th>
+            Data de Criação
+        </th>
+        <th>
+            Tamanho
+        </th>
+        <th>
+            Tipo
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Medias)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @item.Price.ToString("R$ 0.00")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @switch (item.MediaType)
+                {
+                    case uniTunes.Models.MediaType.Book:
+                        @item.Length.ToString("0 pag")
+                        break;
+                    default:
+                        var ts = new DateTime(TimeSpan.FromSeconds(item.Length).Ticks).ToString("mm:ss");
+                        @ts
+                        break;
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediaType)
+            </td>
+            <td>
+                <img onclick="AdicionarCarrinho(@item.MediaId);" src="@Url.Content("~/Content/images/shopping-cart.png")" width="15" height="15" alt="Adicionar ao carrinho" style="cursor:pointer;" /> |
+                <img onclick="Favoritar(@item.MediaId);" src="@Url.Content("~/Content/images/star.png")" width="15" height="15" alt="Adicionar ao carrinho" style="cursor:pointer;" />
+            </td>
+        </tr>
+    }
+
+</table>

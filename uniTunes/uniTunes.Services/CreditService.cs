@@ -6,19 +6,10 @@ using System.Threading.Tasks;
 using uniTunes.Data.Infrastructure;
 using uniTunes.Data.Repositories;
 using uniTunes.Models;
+using uniTunes.Services.Contracts;
 
 namespace uniTunes.Services
 {
-    public interface ICreditService
-    {
-        void AddCredit(Credit credit);
-        IEnumerable<Credit> GetCredits();
-        IEnumerable<CreditType> GetCreditTypes();
-        bool SendOrder();
-        bool ProcessOrder();
-        // Liberar crédito
-    }
-
     public class CreditService : ICreditService
     {
         private readonly ICreditRepository creditRepository;
@@ -37,7 +28,7 @@ namespace uniTunes.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public void AddCredit(Credit credit)
+        public Academic AddCredit(Credit credit)
         {
             var academic = academicRepository.Get(x => x.AcademicId == credit.AcademicId);
             
@@ -47,6 +38,8 @@ namespace uniTunes.Services
             academicRepository.Update(academic);
 
             unitOfWork.Commit();
+
+            return academic;
         }
 
         /// <summary>

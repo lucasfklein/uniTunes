@@ -23,6 +23,7 @@ namespace uniTunes.UI
         private UserContext(Academic user)
         {
             User = user;
+            ShoppingCart = new List<int>();
         }
 
         /// <summary>
@@ -50,6 +51,12 @@ namespace uniTunes.UI
             get { return Current != null; }
         }
 
+        public void AddMedia(int MediaId)
+        {
+            ShoppingCart.Add(MediaId);
+        }
+
         public readonly Academic User;
-    }
+        public List<int> ShoppingCart { get; set; }
+    } 
 }

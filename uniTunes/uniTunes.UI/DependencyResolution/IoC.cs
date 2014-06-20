@@ -22,6 +22,7 @@ using StructureMap.Web.Pipeline;
 using uniTunes.Data.Infrastructure;
 using uniTunes.Data.Repositories;
 using uniTunes.Services;
+using uniTunes.Services.Contracts;
 
 namespace uniTunes.UI.DependencyResolution
 {
@@ -39,9 +40,11 @@ namespace uniTunes.UI.DependencyResolution
 
                 x.For<IAuthService>().Use<AuthService>();
                 x.For<ICreditService>().Use<CreditService>();
+                x.For<IMediaService>().Use<MediaService>();
 
                 x.For<IAcademicRepository>().Use<AcademicRepository>();
                 x.For<ICreditRepository>().Use<CreditRepository>();
+                x.For<IMediaRepository>().Use<MediaRepository>();
 
                 x.For<IDatabaseFactory>().Use<DatabaseFactory>();
                 x.For<IUnitOfWork>().Use<UnitOfWork>();

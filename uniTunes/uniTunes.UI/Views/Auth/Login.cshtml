@@ -51,6 +51,12 @@
             <p style="color: #8899a6">Compartilhe suas mídias, explore por seus interesses e adquira suas favoritas!</p>
             
             @Html.ValidationSummary(string.Empty, new { @class = "alert-danger" })
+            
+            if (TempData["message"] != null)
+            {
+                <span class="label label-success">@TempData["message"].ToString()</span>
+            }
+            
             <div class="form-group">
                 @Html.TextBoxFor(x => x.User, new { @class = "form-control", required = "required", autofocus = "autofocus", placeholder = "Usuário", maxlength = "14", size = "14" })
             </div>

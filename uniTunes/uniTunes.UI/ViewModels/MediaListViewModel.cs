@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using uniTunes.UI.ViewModels.Classes;
+using uniTunes.Models;
 
 namespace uniTunes.UI.ViewModels
 {
-    public class HomeViewModel
+    public class MediaListViewModel
     {
-        public List<MenuItem> Menus { get; set; }
+        public List<Media> Medias { get; set; }
     }
 }

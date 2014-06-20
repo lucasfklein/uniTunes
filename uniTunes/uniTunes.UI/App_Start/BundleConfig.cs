@@ -10,7 +10,8 @@ namespace uniTunes.UI
         {
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
                         "~/Scripts/jquery-1.10.2.js",
-                        "~/Scripts/bootstrap.js"));
+                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/site.js"));
 
             bundles.Add(new StyleBundle("~/bundles/css").Include(
                         "~/Content/normalize.css",

@@ -1,0 +1,56 @@
+﻿
+@{
+    string route = string.Format("{0}/{1}", ViewContext.RouteData.Values["controller"].ToString(), ViewContext.RouteData.Values["action"].ToString());
+}
+@section scripts
+{
+    <script>
+
+    </script>
+}
+
+<style>
+    .nav > li > a
+    {
+        color: white;
+    }
+
+    .menu{
+        background: rgba(0,0,0,0.1) !important;
+        border-bottom: 1px solid white;
+        border-radius: 4px 4px 0px 0px;
+    }
+
+    .menu:hover {
+        background: rgba(0,0,0,0.2) !important;
+    }
+
+    .menu-active {
+        background: rgba(0,0,0,0.3);
+        border-color: white;
+        border-style: solid;
+        border-width: 1px 1px 0px 1px !important;
+        border-radius: 4px 4px 0px 0px;
+    }
+
+    .menu-active:hover{
+        background: rgba(0,0,0,0.3) !important;
+        border-color: white;
+        border-style: solid;
+        border-width: 1px 1px 0px 1px !important;
+        border-radius: 4px 4px 0px 0px;
+    }
+
+</style>
+
+<ul class="nav nav-justified" style="margin-bottom: 15px;">
+    <li>
+        @Html.ActionLink("Dashboard", "Dashboard", "Home", null, new { @class = (route=="Home/Dashboard" ? "menu-active" : "menu")})
+    </li>
+    <li>
+        @Html.ActionLink("Home", "Index", "Home", null, new { @class = (route == "Home/Index" ? "menu-active" : "menu") })
+    </li>
+    <li>
+        @Html.ActionLink("Administração", "Index", "Administration", null, new { @class = (route == "Administration/Index" ? "menu-active" : "menu") })
+    </li>
+</ul>

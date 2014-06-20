@@ -1,25 +1,22 @@
-﻿@model uniTunes.UI.ViewModels.HomeViewModel
+﻿@model uniTunes.UI.ViewModels.AdministrationViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    string message = (TempData["message"] != null ? TempData["message"].ToString() : string.Empty);
-}
-
-@section messages
-{
-    @if (!string.IsNullOrEmpty(message))
-    {
-        <div class="alert alert-success alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            @message
-        </div>
-    }
+    string message = ViewContext.RouteData.Values["Message"] != null ? ViewContext.RouteData.Values["Message"].ToString() : string.Empty;
 }
 
 @Html.Partial("_Menu")
 
 <div class="container">
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div>
+            @message
+        </div>
+    }
+
     <div class="row">
         <div id="menu">
             <ul style="margin: 0 auto;">

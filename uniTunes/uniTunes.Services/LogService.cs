@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 using uniTunes.Data.Infrastructure;
 using uniTunes.Data.Repositories;
 using uniTunes.Models;
+using uniTunes.Services.Contracts;
 
 namespace uniTunes.Services
 {
-    public interface ILogService
-    {
-        void Create(Log log);
-    }
-
     public class LogService : ILogService
     {
         private readonly ILogRepository logRepository;

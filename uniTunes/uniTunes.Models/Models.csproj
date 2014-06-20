@@ -52,12 +52,8 @@
     <Compile Include="Models\Academic.cs" />
     <Compile Include="Models\Collection.cs" />
     <Compile Include="Models\Media.cs" />
-    <Compile Include="Models\Video.cs" />
-    <Compile Include="Models\Podcast.cs" />
-    <Compile Include="Models\Music.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Credit.cs" />
-    <Compile Include="Models\Book.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

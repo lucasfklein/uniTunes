@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using uniMedia.UI.ActionFilters;
 using uniTunes.Models;
 using uniTunes.Services;
+using uniTunes.Services.Contracts;
 using uniTunes.UI.ViewModels;
 
 namespace uniTunes.UI.Controllers
@@ -21,19 +22,36 @@ namespace uniTunes.UI.Controllers
         }
 
         // GET: Credit
-        public ActionResult Index()
+        public ActionResult Buy()
         {
             return View();
         }
-        
+
         [HttpPost]
         public ActionResult Buy(BuyCreditViewModel model)
         {
-            var credit = MapCredit(model);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var credit = MapCredit(model);
+                    var academic = CreditService.AddCredit(credit);
+                    
+                    UserContext.Initialize(academic); 
 
-            CreditService.AddCredit(credit);
+                    TempData["message"] = "Créditos adquiridos com sucesso.";
+                }
+                catch
+                {
+                    TempData["message"] = "Ocorreu um erro na compra de créditos.";
+                }
 
-            return RedirectToAction("Index", "Home", new { Message = "Créditos adquiridos com sucesso." });
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View(model);
+            }
         }
 
         #region View Model Mapping
@@ -45,7 +63,7 @@ namespace uniTunes.UI.Controllers
                 AcademicId = UserContext.Current.User.AcademicId,
                 Status = CreditStatus.Processing,
                 Type = model.CreditType,
-                Value = model.Value
+                Value = model.Price
             };
         }
 

@@ -11,28 +11,23 @@
     <meta name="reply-to" content="fcm1990@gmail.com">
     <link rel="shortcut icon" href="@Url.Content("~/Content/Images/network.png")" type="image/x-icon" />
     <title>UniTunes</title>
-
-    @Scripts.Render("~/bundles/js")
     @Styles.Render("~/bundles/css")
-
 </head>
 <body>
-        @Html.Partial("_Header")
+    
+    @Html.Partial("_Header")
+
     <div class="container">
+
+        @RenderSection("messages", required: false)
+
         @RenderBody()
     </div>
-    <footer>
-        @Html.Partial("_Footer")
-    </footer>
+    
+    @Html.Partial("_Footer")
 
-    <div id="search">
-        <button type="button" class="close">×</button>
-        <form>
-            <input type="search" value="" placeholder="Digite aqui" />
-            <button type="submit" class="btn btn-primary">Procurar</button>
-        </form>
-    </div>
-   
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 

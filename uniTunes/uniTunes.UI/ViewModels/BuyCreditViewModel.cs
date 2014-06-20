@@ -9,12 +9,10 @@ namespace uniTunes.UI.ViewModels
 {
     public class BuyCreditViewModel
     {
+        [Required]
         public CreditType CreditType { get; set; }
         
-        [Range(1.00, 100.00, ErrorMessage = "O valor deve estar entre 1 e 100.0")]
-        public double Value;
-        public string CreditCard { get; set; }
-        public DateTime ExpireDate { get; set; }
-        public string SecurityNumber { get; set; }
+        [Required, Range(1.00, 100.00, ErrorMessage = "O valor deve estar entre 1 e 100.0")]
+        public double Price {get; set;}
     }
 }

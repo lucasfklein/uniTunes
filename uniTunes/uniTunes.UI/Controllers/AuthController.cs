@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using uniMedia.UI.ActionFilters;
 using uniTunes.Models;
 using uniTunes.Services;
+using uniTunes.Services.Contracts;
 using uniTunes.UI.ViewModels;
 
 namespace uniTunes.UI.Controllers
@@ -73,13 +74,10 @@ namespace uniTunes.UI.Controllers
             {
                 var academic = MapAcademic(model);
                 AuthService.Register(academic);
+                TempData["message"] = "Usuário cadastrado com sucesso.";
+            }
+            return RedirectToAction("Login");
 
-                return View();
-            }
-            else
-            {
-                return View(model);
-            }
         }
 
         // POST: Auth/Logoff
@@ -140,7 +138,9 @@ namespace uniTunes.UI.Controllers
                 LastName = model.LastName,
                 Link = model.Link,
                 Login = model.Login,
-                Password = model.Password
+                Password = model.Password,
+                Question = model.Question,
+                Answer = model.Answer
             };
         }
 

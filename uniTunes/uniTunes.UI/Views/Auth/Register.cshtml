@@ -34,6 +34,14 @@
         </div>
 
         <div class="form-group">
+            @Html.TextBoxFor(model => model.Question, new { @class = "form-control", placeholder = "Pergunta secreta" })
+        </div>
+
+        <div class="form-group">
+            @Html.TextBoxFor(model => model.Answer, new { @class = "form-control", placeholder = "Resposta da pergunta secreta." })
+        </div>
+
+        <div class="form-group">
             @Html.EnumDropDownListFor(model => model.Link, new { @class = "form-control", placeholder = "Vínculo" })
         </div>
 

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3AFD7125-64F4-431B-BA52-F8CC63DF0908}</ProjectGuid>
+    <ProjectGuid>{35BEF595-AD8C-409A-A2E3-07699D66188C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>uniTunes.Data</RootNamespace>
-    <AssemblyName>uniTunes.Data</AssemblyName>
+    <RootNamespace>Services.Contracts</RootNamespace>
+    <AssemblyName>Services.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,14 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,26 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\AcademicConfiguration.cs" />
-    <Compile Include="Infrastructure\DatabaseFactory.cs" />
-    <Compile Include="Infrastructure\Disposable.cs" />
-    <Compile Include="Initializers\UniInitializer.cs" />
-    <Compile Include="Repositories\MediaRepository.cs" />
-    <Compile Include="Repositories\CreditRepository.cs" />
-    <Compile Include="Repositories\AcademicRepository.cs" />
-    <Compile Include="Repositories\LogRepository.cs" />
-    <Compile Include="UniContext.cs" />
-    <Compile Include="Infrastructure\IUnitOfWork.cs" />
-    <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Infrastructure\RepositoryBase.cs" />
-    <Compile Include="Infrastructure\IRepository.cs" />
-    <Compile Include="Infrastructure\IDatabaseFactory.cs" />
+    <Compile Include="IAcademicService.cs" />
+    <Compile Include="IAuthService.cs" />
+    <Compile Include="ICreditService.cs" />
+    <Compile Include="ILogService.cs" />
+    <Compile Include="IMediaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\uniTunes.Models\Models.csproj">

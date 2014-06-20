@@ -1,6 +1,6 @@
 ﻿@using uniTunes.UI;
 
-<header>
+<header style="margin-bottom:30px;">
     <div class="navbar navbar-default navbar-fixed-top drop-shadow" style="border-bottom: 1px solid #77A688" id="top" role="banner">
         <div class="container">
             <div>
@@ -10,6 +10,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">@(UserContext.Current != null ? UserContext.Current.User.FirstName : String.Empty) <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a id="user-preferences" data-toggle="modal" data-target="#header-modal"><span class=" glyphicon glyphicon-cog"></span>&nbsp;&nbsp;Preferências</a></li>
+                            <li><a id="user-messages" data-toggle="modal" data-target="#header-modal"><span class=" glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Mensagens&nbsp;<span class="badge">0</span></a></li>
                             <li><a id="help-contact" data-toggle="modal" data-target="#header-modal"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Contato</a></li>
                             <li><a id="help-support" data-toggle="modal" data-target="#header-modal"><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;Suporte</a></li>
                             <li class="divider"></li>
@@ -17,8 +18,8 @@
                         </ul>
                     </li>
                     <li class="pull-right"><a>Saldo: R$ @((UserContext.Current.User != null ? UserContext.Current.User.Balance : 0).ToString("0.00"))</a></li>
-                    <li class="pull-right"><a id="shopping-cart" data-toggle="modal" data-target="#header-modal"><img src="@Url.Content("~/Content/Images/shopping-cart.png")" style="width:25px; height: 25px; margin: -10px 0 -10px 0; padding: 0px;" />&nbsp;<span class="badge">0</span></a></li>
-                    <li><a href="#search">Procurar</a></li>5
+                    <li class="pull-right"><a id="shopping-cart" data-toggle="modal" data-target="#header-modal"><img src="@Url.Content("~/Content/Images/shopping-cart.png")" style="width:25px; height: 25px; margin: -10px 0 -10px 0; padding: 0px;" />&nbsp;<span class="badge">@UserContext.Current.ShoppingCart.Count</span></a></li>
+                    <li><a href="#search">Procurar</a></li>
                 </ul>
             </div>
         </div>
@@ -34,57 +35,10 @@
     </div>
 </div>
 
-<script>
-
-    $(document).ready(function () {
-
-        // Search - Inicio
-        $('a[href="#search"]').on('click', function (event) {
-            event.preventDefault();
-            $('#search').addClass('open');
-            $('#search > form > input[type="search"]').focus();
-        });
-
-        $('#search, #search button.close').on('click keyup', function (event) {
-            if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-                $(this).removeClass('open');
-            }
-        });
-        // Search - Fim
-
-        $('#shopping-cart').click(function () {
-            var url = "/Media/ShoppingCart";
-            $.get(url, function (data) {
-                $('#header-modal-body').html(data);
-                $('#header-modal').modal('show');
-            });
-        });
-
-        $('#help-support').click(function () {
-            var url = "/Help/Support";
-            $.get(url, function (data) {
-                $('#header-modal-body').html(data);
-                $('#header-modal').modal('show');
-            });
-        });
-
-        $('#help-contact').click(function () {
-            var url = "/Help/Contact";
-            $.get(url, function (data) {
-                $('#header-modal-body').html(data);
-                $('#header-modal').modal('show');
-            });
-        });
-
-        $('#user-preferences').click(function () {
-            var url = "/Profile/Preferences";
-            $.get(url, function (data) {
-                $('#header-modal-body').html(data);
-                $('#header-modal').modal('show');
-            });
-        });
-
-    });
-
-
-</script>
+<div id="search" style="z-index: 100;">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="Digite aqui" />
+        <button type="submit" class="btn btn-primary">Procurar</button>
+    </form>
+</div>

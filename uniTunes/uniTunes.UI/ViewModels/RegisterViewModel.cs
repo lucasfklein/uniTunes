@@ -19,5 +19,9 @@ namespace uniTunes.UI.ViewModels
         public string Email { get; set; }
         [Required(ErrorMessage = "É necessário preencher o vínculo acadêmico.")]
         public LinkType Link { get; set; }
+        [Required(ErrorMessage="É necessário preencher a pergunta.")]
+        public string Question { get; set; }
+        [Required(ErrorMessage = "É necessário preencher a resposta.")]
+        public string Answer { get; set; }
     }
 }

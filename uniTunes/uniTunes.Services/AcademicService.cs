@@ -6,17 +6,10 @@ using System.Threading.Tasks;
 using uniTunes.Data.Infrastructure;
 using uniTunes.Data.Repositories;
 using uniTunes.Models;
+using uniTunes.Services.Contracts;
 
 namespace uniTunes.Services
 {
-    public interface IAcademicService
-    {
-        Academic GetAcademic(int id);
-        bool Auth(string user, string password);
-        IEnumerable<Academic> GetAcademics();
-        IEnumerable<Academic> GetUsersByLinkType(LinkType type);
-    }
-
     public class AcademicService : IAcademicService
     {
         private readonly IAcademicRepository academicRepository;

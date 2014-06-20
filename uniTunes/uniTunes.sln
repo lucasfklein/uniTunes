@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "uniTunes.Models\M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "uniTunes.Data\Data.csproj", "{3AFD7125-64F4-431B-BA52-F8CC63DF0908}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Contracts", "uniTunes.Services.Contracts\Services.Contracts.csproj", "{35BEF595-AD8C-409A-A2E3-07699D66188C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3AFD7125-64F4-431B-BA52-F8CC63DF0908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AFD7125-64F4-431B-BA52-F8CC63DF0908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AFD7125-64F4-431B-BA52-F8CC63DF0908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35BEF595-AD8C-409A-A2E3-07699D66188C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BEF595-AD8C-409A-A2E3-07699D66188C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BEF595-AD8C-409A-A2E3-07699D66188C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BEF595-AD8C-409A-A2E3-07699D66188C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
