@@ -83,6 +83,15 @@ namespace uniTunes.UI.Controllers
 
         public PartialViewResult ShoppingCart()
         {
+            if(UserContext.Current.ShoppingCart.Count > 0)
+            {
+                List<Media> list = new List<Media>();
+
+                UserContext.Current.ShoppingCart
+                    .ForEach(x => list.Add(MediaService.Get(x)));
+
+            }
+
             return PartialView();
         }
 

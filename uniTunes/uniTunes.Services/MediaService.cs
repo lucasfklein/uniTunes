@@ -56,5 +56,10 @@ namespace uniTunes.Services
             mediaRepository.Add(media);
             unitOfWork.Commit();
         }
+
+        public Media Get(int id)
+        {
+            return mediaRepository.Get(x => x.MediaId == id);
+        }
     }
 }

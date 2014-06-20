@@ -9,6 +9,7 @@ namespace uniTunes.Services.Contracts
 {
     public interface IMediaService
     {
+        Media Get(int id);
         List<Media> GetAll();
         List<Media> GetTop(int n);
         void Save(Media media);

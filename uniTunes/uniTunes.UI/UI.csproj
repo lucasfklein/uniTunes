@@ -255,6 +255,10 @@
       <Project>{79a6aff1-9161-4e84-b9fc-8eb713d2fc28}</Project>
       <Name>Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\uniTunes.Services.Contracts\Services.Contracts.csproj">
+      <Project>{35bef595-ad8c-409a-a2e3-07699d66188c}</Project>
+      <Name>Services.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\uniTunes.Services\Services.csproj">
       <Project>{4a2418c4-51e0-4d1e-b7c9-a5e60aef5203}</Project>
       <Name>Services</Name>

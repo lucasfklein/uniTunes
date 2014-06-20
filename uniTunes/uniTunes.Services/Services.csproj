@@ -55,6 +55,10 @@
       <Project>{79a6aff1-9161-4e84-b9fc-8eb713d2fc28}</Project>
       <Name>Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\uniTunes.Services.Contracts\Services.Contracts.csproj">
+      <Project>{35bef595-ad8c-409a-a2e3-07699d66188c}</Project>
+      <Name>Services.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
