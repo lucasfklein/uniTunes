@@ -1,7 +1,7 @@
 uniTunes
 ========================
 
-- Aplicação Web criada para a cadeira de Arquitetura de Software.
+- Aplicação Web criada para a matéria de Arquitetura de Software.
 
 ========================
 	Entregas:
@@ -25,6 +25,8 @@ uniTunes
 		- Generic repository and individuals repositories.
 	- uniTunes.Models
 		- Models, Classes
+	- uniTunes.Services.Contracts
+		- Services interfaces
 	- uniTunes.Services
 		- Business logic and rules
 	- uniTunes.Tests
