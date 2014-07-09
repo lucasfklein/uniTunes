@@ -4,16 +4,14 @@ uniTunes
 - Aplicação Web criada para a matéria de Arquitetura de Software.
 
 ========================
-	Entregas:
-	- Data de Entrega Parcial: 12/06
-	- Data de Entrega Final: 19/06
+	- Site: unitunes.azurewebsites.net (User admin, pass 123)
 ========================
 	Architecture:
 	ASP.NET MVC 5
 
 	Front-end: HTML5, CSS3, Javascript
 	Javascript libraries: jQuery
-	Design Patterns and Practices: Code-First, Entity Framework, Unit of Work, Repositories, Dependency Injection (StructureMap)
+	Design Patterns and Practices: Code-First, Entity Framework, Unit of Work, Repositories, Inversion of Control (StructureMap)
 	Others: Windows Azure (Host), Amazon RDS (SGBD: SQL Server), Twitter Bootstrap
 ========================
 	Solution:
